@@ -1,6 +1,6 @@
 # SyntaxHighlighter v4
 
-SyntaxHighlighter is a client side highlighter for the web and web-apps! It's been around since 2004 and it's used virtually everywhere to seamlessly highlight code for presentation purposes.
+SyntaxHighlighter is a client side highlighter for the web and web-apps. It's been around since 2004 and it's used virtually everywhere to seamlessly highlight code for presentation purposes.
 
 <img src="screenshot.png" width="640"/>
 
@@ -20,7 +20,7 @@ $ npm install
 $ ./node_modules/gulp/bin/gulp.js setup-project
 ```
 
-The `./node_modules/gulp/bin/gulp.js setup-project` command clones ALL of the repositories from [[https://github.com/syntaxhighlighter]] and places them into the `repos` subfolder. You are now ready to build your own distribution file.
+The `./node_modules/gulp/bin/gulp.js setup-project` command clones ALL of the repositories from https://github.com/syntaxhighlighter and places them into the `repos` subfolder. You are now ready to build your own distribution file.
 
 ### Building `syntaxhighlighter.js`
 
@@ -117,9 +117,6 @@ By default all build files are places into the `./dist` folder. You can change t
 
 Specifying this flag will make SyntaxHighlighter v4 work with all existing v3 brushes out of the box, without bundling. See [[Migration Guide]] for more details
 
-
-[Migration Guide]: https://github.com/syntaxhighlighter/syntaxhighlighter/wiki/Migration-Guide
-
 ### Usage
 
 To get SyntaxHighlighter to work on you page, you need to do the following:
@@ -130,11 +127,11 @@ To get SyntaxHighlighter to work on you page, you need to do the following:
 
 #### `<pre />` method
 
-**ADVANTAGES**
+##### Advantages
 
 Works everywhere, graceful fallback if there are script problems, shows up in all RSS readers as regular `<pre />`
 
-**PROBLEMS**
+##### Problems
 
 Major issue with this method is that all right angle brackets **must be HTML escaped**, eg all `<` must be replaced with `&lt;` This will ensure correct rendering.
 
@@ -156,11 +153,11 @@ function foo()
 
 The benefit of this method is ability to place virtually anything inside the CDATA **without having to escape anything***, so this allows for a straight 'cut and paste' experience from your favorite text editor.
 
-**ADVANTAGES**
+##### Advantages
 
 Doesn’t require escaping of the right angle bracket.
 
-**PROBLEMS**
+##### Problems
 
 1.  No fallback, `<script />` tag is stripped out by most RSS readers, so if you are using SyntaxHighlighter on a blog, you are better off with the `<pre />` method.
 2.  If you include a closing script tag, eg `</script>`, even inside CDATA block, most browsers will incorrectly close `<script type="text/syntaxhighlighter">` tag prematurely.
@@ -184,3 +181,5 @@ Here’s an example (**note thw required CDATA tag**):
 
 ## License
 This project is licensed under the terms of the MIT license.
+
+[Migration Guide]: https://github.com/syntaxhighlighter/syntaxhighlighter/wiki/Migration-Guide
