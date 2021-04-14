@@ -80,6 +80,8 @@ Examples:
 --brushes=/full/path/to/my-brush.js,css,javascript
 ```
 
+List of [supported brushes](https://github.com/syntaxhighlighter?utf8=%E2%9C%93&q=brush)
+
 #### --theme
 
 `--theme` takes a single theme name. Here's how theme resolution works:
@@ -104,6 +106,8 @@ Examples:
 --theme=./my-theme.scss
 --theme=/full/path/to/my-theme.scss
 ```
+
+List of [supported themes](https://github.com/syntaxhighlighter?utf8=%E2%9C%93&q=theme)
 
 #### --output
 
