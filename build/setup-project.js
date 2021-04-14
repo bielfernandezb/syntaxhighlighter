@@ -22,9 +22,7 @@ export default function (gulp, rootPath) {
       request(opts, (err, response) => {
         if (err) return reject(err);
         const json = response.body;
-        fs.writeFile(REPOS_CACHE, JSON.stringify(json, null, 2), function(err, result) {
-          if(err) console.log('Error writing file ' + REPOS_CACHE, err);
-        });
+        fs.writeFileSync(REPOS_CACHE, JSON.stringify(json, null, 2));
         resolve(json);
       })
     );
