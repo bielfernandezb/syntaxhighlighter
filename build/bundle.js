@@ -162,6 +162,8 @@ export function bundle(rootPath, destPath, argv) {
     getVersion(rootPath),
   ])
   .then(function ([availableBrushes, version]) {
+    const fs = require('fs');
+    
     argv = argv || require('yargs')
       .describe('brushes', 'Comma separated list of brush names or paths to be bundled.')
       .describe('theme', 'Name or path of the CSS theme you want to use.')
@@ -170,6 +172,10 @@ export function bundle(rootPath, destPath, argv) {
       .epilog(`Available brushes are "all" or ${availableBrushes.join(', ')}.\n\nYou may also pass paths to brush JavaScript files and theme SASS files.`)
       .help('help')
       .argv;
+
+    if (!fs.existsSync(argv.output)) {
+      fs.mkdirSync(argv.output);
+    }
 
     return getBuildBrushes(rootPath, argv, availableBrushes)
       .then(function (buildBrushes) {
