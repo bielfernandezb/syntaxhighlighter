@@ -163,7 +163,7 @@ export function bundle(rootPath, destPath, argv) {
   ])
   .then(function ([availableBrushes, version]) {
     const fs = require('fs');
-    
+
     argv = argv || require('yargs')
       .describe('brushes', 'Comma separated list of brush names or paths to be bundled.')
       .describe('theme', 'Name or path of the CSS theme you want to use.')
@@ -175,6 +175,12 @@ export function bundle(rootPath, destPath, argv) {
 
     if (!fs.existsSync(argv.output)) {
       fs.mkdirSync(argv.output);
+    }
+
+    if(!fs.existsSync( `${argv.output}/.gitignore`)) {
+      fs.writeFileSync(
+        `${argv.output}/.gitignore`,
+        '*');
     }
 
     return getBuildBrushes(rootPath, argv, availableBrushes)
