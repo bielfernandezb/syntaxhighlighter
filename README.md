@@ -6,6 +6,9 @@ SyntaxHighlighter is a client side highlighter for the web and web-apps. It's be
 
 SyntaxHighlighter is currently used and has been used in the past by Microsoft, Apache, Mozilla, Yahoo, Wordpress, Bug Labs, Freshbooks and many other companies and blogs.
 
+## Download 
+Download pre-built syntaxhighlighter.js and css themes from https://bartjolling.github.io/2021/04/29/syntaxhighlighter-online.html
+
 ## Building Instructions
 
 SyntaxHighlighter lets you build a single `.js` file that will include the core, CSS theme and the syntaxes that you wish to use. The process is very simple and consists of just a few steps.
@@ -164,7 +167,7 @@ Doesn’t require escaping of the right angle bracket.
 
 SyntaxHighlighter looks for `<script type="syntaxhighlighter" />` which have a specially formatted `class` attribute. The format of the attribute is the same as the CSS `style` attribute. The only required parameter is `brush`.
 
-Here’s an example (**note thw required CDATA tag**):
+Here’s an example (**note the required CDATA tag**):
 
 ```html
 <script type="text/javascript" src="syntaxhighlighter.js"></script>
